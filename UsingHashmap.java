@@ -2,15 +2,15 @@ import java.util.*;
 
 public class UsingHashmap{
 
-	public static void findRepeatedWords(String a){
+	public static void findRepeatedWords(String array){
 		HashMap<String, Integer>hm = new HashMap<String, Integer>();// Creating HashMap
 	
 		
-		a = a.replaceAll("\\p{Punct}","");
-		a = a.toLowerCase();
-		System.out.println(a);
+		array = array.replaceAll("\\p{Punct}","");
+		array = array.toLowerCase();
+		System.out.println(array);
 
-		String[] words = a.split(" ");
+		String[] words = array.split(" ");
 		for(int i = 0; i < words.length; i++){
 			int k = 1;
 			
@@ -26,18 +26,21 @@ public class UsingHashmap{
 			System.out.println(hm);
 	}
 
-	public static void main(String[] args) {
-		Scanner scn = new Scanner(System.in);
-		System.ot.println("Enter a string to check for the repeated words:");
-		String a = scn.nextLine();
-			findRepeatedWords(a);
-			
-			
 
-		
-		
-
+	public static int[] twoNumberSum(int[] array, int targetSum) {
+  
+  	Set<Integer> hsh = new HashSet<>();
+		for(int i : array){
+			int y = targetSum - i;
+			if(hsh.contains(y))
+				return new int[] {y, i};
+			else hsh.add(i);
+   
+ 	 }
+		return new int[0];
 	}
+
+
 }
 
 
